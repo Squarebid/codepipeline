@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="1" failures="0" errors="0" time="15.141">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-10-28T22:26:56" time="12.952" tests="1">
+    <testcase classname=" SQS Queue Created" name=" SQS Queue Created" time="0.002">
+    </testcase>
+  </testsuite>
+</testsuites>
