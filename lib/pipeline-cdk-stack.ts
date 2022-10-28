@@ -16,11 +16,10 @@ export class PipelineCdkStack extends Stack {
 
     const sourceOutput = new codepipeline.Artifact();
     
-    const sourceRepo = new codepipeline_actions.GitHubSourceAction({
+    const sourceAction = new codepipeline_actions.GitHubSourceAction({
       actionName: 'GitHub_Source',
       owner: 'Squarebid',
       repo: 'codepipeline',
-      
       oauthToken: SecretValue.secretsManager('github_token'),
       output: sourceOutput,
       branch: 'main', 
@@ -48,15 +47,7 @@ export class PipelineCdkStack extends Stack {
 
     pipeline.addStage({
       stageName: "Source",
-      actions: [
-        new codepipeline_actions.CodeCommitSourceAction({
-          actionName: "CodeCommit",
-          repository: sourceRepo,
-          //repository: sourceAction,
-          output: sourceOutput,
-          branch: "main",
-        }),
-      ],
+      actions: [sourceAction],
     });
 
     pipeline.addStage({
@@ -72,8 +63,10 @@ export class PipelineCdkStack extends Stack {
     });
     
 
-    new CfnOutput(this, "CodeCommitRepositoryUrl", {
-      value: sourceRepo.repositoryCloneUrlHttp,
-    });
+    //new CfnOutput(this, "CodeCommitRepositoryUrl", {
+    //  value: sourceAction.repositoryCloneUrlHttp,
+    //});
+    
+    
   }
 }
