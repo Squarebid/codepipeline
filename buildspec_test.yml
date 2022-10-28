@@ -17,4 +17,4 @@ reports:
     files:
       - junit.xml
     file-format: JUNITXML
-    base-directory: app-cdk
+    base-directory: .
