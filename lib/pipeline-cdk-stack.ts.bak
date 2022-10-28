@@ -15,7 +15,7 @@ export class PipelineCdkStack extends Stack {
       actionName: 'GitHub_Source',
       owner: 'Squarebid',
       repo: 'codepipeline',
-      oauthToken: SecretValue.secretsManager('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'),
+      oauthToken: SecretValue.secretsManager('github_token'),
       output: sourceOutput,
       branch: 'main', 
       });
