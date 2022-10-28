@@ -5,6 +5,6 @@ import { PipelineCdkStack } from '../lib/pipeline-cdk-stack'
 
 const app = new cdk.App();
 
-new AppCdkStack(app, 'AppCdkStack', {});
+//new AppCdkStack(app, 'AppCdkStack', {});
 
 new PipelineCdkStack(app, 'pipeline-stack', {});
